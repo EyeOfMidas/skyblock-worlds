@@ -1,0 +1,11 @@
+main: com.eyeofmidas.skybox.Main
+name: SkyboxWorld
+version: 1.0
+author: Justin Gilman
+description: An Example plugin
+commands:
+  mycommand:
+    description: An example command
+    usage: /mycommand
+    permission: myplugin.mycommand
+    permission-message: You don't have the myplugin.mycommand permission.
