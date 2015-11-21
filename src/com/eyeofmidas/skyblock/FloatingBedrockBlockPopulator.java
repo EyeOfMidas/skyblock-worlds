@@ -7,7 +7,7 @@ import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.generator.BlockPopulator;
 
-public class FloatingBedrockBlocks extends BlockPopulator {
+public class FloatingBedrockBlockPopulator extends BlockPopulator {
 
 	@Override
 	public void populate(World world, Random random, Chunk chunk) {

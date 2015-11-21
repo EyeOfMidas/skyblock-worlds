@@ -9,16 +9,13 @@ import org.bukkit.World;
 import org.bukkit.generator.BlockPopulator;
 import org.bukkit.generator.ChunkGenerator;
 
-public class SkyblockChunkGenerator extends ChunkGenerator {
-
+public class NetherSkyblockChunkGenerator extends ChunkGenerator {
 	private ArrayList<BlockPopulator> blockPopulators;
 
-	public SkyblockChunkGenerator() {
+	public NetherSkyblockChunkGenerator() {
 		this.blockPopulators = new ArrayList<BlockPopulator>();
-		this.blockPopulators.add(new DirtIslandBlockPopulator());
-		this.blockPopulators.add(new SandIslandBlockPopulator());
-		this.blockPopulators.add(new FloatingBedrockBlockPopulator());
-		this.blockPopulators.add(new TreePopulator());
+		this.blockPopulators.add(new NetherrackBlockPopulator());
+		this.blockPopulators.add(new GlowStoneBlockPopulator());
 	}
 
 	@Override
@@ -35,7 +32,7 @@ public class SkyblockChunkGenerator extends ChunkGenerator {
 	public Location getFixedSpawnLocation(World world, Random random) {
 		return new Location(world, 8, 66, 8);
 	}
-	
+
 	@Override
 	public boolean canSpawn(World world, int x, int z) {
 		return super.canSpawn(world, x, z);

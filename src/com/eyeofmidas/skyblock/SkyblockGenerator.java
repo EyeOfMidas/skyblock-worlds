@@ -24,8 +24,17 @@ public class SkyblockGenerator extends JavaPlugin {
 	@Override
 	public ChunkGenerator getDefaultWorldGenerator(String worldName, String uid) {
 		log.info("[SkyblockGenerator] Got id " + uid);
-		return new SkyblockChunkGenerator();
+		if (uid.equals("normal")) {
+			return new SkyblockChunkGenerator();
+		}
+		if (uid.equals("nether")) {
+			return new NetherSkyblockChunkGenerator();
+		}
+		// if (uid.equals("the_end")) {
+		// return new EndSkyblockChunkGenerator();
+		// }
+
+		return super.getDefaultWorldGenerator(worldName, uid);
 	}
-	
 
 }
