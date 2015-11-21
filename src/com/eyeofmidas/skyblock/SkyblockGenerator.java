@@ -23,8 +23,9 @@ public class SkyblockGenerator extends JavaPlugin {
 
 	@Override
 	public ChunkGenerator getDefaultWorldGenerator(String worldName, String uid) {
-		log.info("Got id " + uid);
+		log.info("[SkyblockGenerator] Got id " + uid);
 		return new SkyblockChunkGenerator();
 	}
+	
 
 }

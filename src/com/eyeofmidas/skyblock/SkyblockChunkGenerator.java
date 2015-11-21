@@ -25,12 +25,11 @@ public class SkyblockChunkGenerator extends ChunkGenerator {
 
 	@Override
 	public ChunkData generateChunkData(World world, Random random, int x, int z, BiomeGrid biome) {
-		ChunkData data = createChunkData(world);
-		return data;
+		return createChunkData(world);
 	}
 
 	@Override
 	public Location getFixedSpawnLocation(World world, Random random) {
-		return new Location(world, 0.5, world.getHighestBlockYAt(0, 0), 0.5);
+		return new Location(world, 8, 66, 8);
 	}
 }
