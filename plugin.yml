@@ -1,11 +1,7 @@
-main: com.eyeofmidas.skybox.Main
-name: SkyboxWorld
-version: 1.0
+main: com.eyeofmidas.skyblock.SkyblockGenerator
+name: SkyblockGenerator
+version: 0.1
 author: Justin Gilman
-description: An Example plugin
-commands:
-  mycommand:
-    description: An example command
-    usage: /mycommand
-    permission: myplugin.mycommand
-    permission-message: You don't have the myplugin.mycommand permission.
+website: http://eyeofmidas.com/skyblock
+description: SkyblockGenerator is a map generator that creates chunks inspired by Skyblock.
+load: STARTUP
