@@ -17,6 +17,7 @@ public class SkyblockChunkGenerator extends ChunkGenerator {
 		this.blockPopulators = new ArrayList<BlockPopulator>();
 		this.blockPopulators.add(new DirtIslandBlockPopulator());
 		this.blockPopulators.add(new SandIslandBlockPopulator());
+		this.blockPopulators.add(new OreBlockPopulator());
 		// this.blockPopulators.add(new FloatingBedrockBlockPopulator());
 		this.blockPopulators.add(new TreePopulator());
 	}

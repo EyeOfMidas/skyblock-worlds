@@ -8,19 +8,20 @@ import org.bukkit.World;
 import org.bukkit.block.Biome;
 import org.bukkit.generator.BlockPopulator;
 
-/**
- * BlockPopulator that adds trees based on the biome.
- * 
- * @author heldplayer
- */
 public class TreePopulator extends BlockPopulator {
 
 	@Override
 	public void populate(World world, Random random, Chunk chunk) {
 		int chunkX = chunk.getX() << 4;
 		int chunkZ = chunk.getZ() << 4;
-		int randomX = random.nextInt(6) + 6;
-		int randomZ = random.nextInt(6) + 6;
+		int randomX = random.nextInt(3) + 7;
+		if (randomX % 8 == 0) {
+			randomX++;
+		}
+		int randomZ = random.nextInt(3) + 7;
+		if (randomZ % 8 == 0) {
+			randomZ++;
+		}
 		int y = world.getHighestBlockYAt(chunkX + randomX, chunkZ + randomZ);
 
 		Biome biome = world.getBiome(chunkX + randomX, chunkZ + randomZ);
@@ -87,8 +88,8 @@ public class TreePopulator extends BlockPopulator {
 		case TAIGA_HILLS:
 		case TAIGA_MOUNTAINS:
 		default:
-//			Block plantBlock = chunk.getBlock(randomX, y, randomZ);
-//			plantBlock.setType(Material.SAPLING);
+			// Block plantBlock = chunk.getBlock(randomX, y, randomZ);
+			// plantBlock.setType(Material.SAPLING);
 			break;
 
 		}
@@ -97,6 +98,12 @@ public class TreePopulator extends BlockPopulator {
 			chunk.getBlock(randomX, y, randomZ).setType(Material.SAPLING);
 		} else if (chunk.getBlock(randomX, y - 1, randomZ).getType().equals(Material.SAND)) {
 			chunk.getBlock(randomX, y, randomZ).setType(Material.CACTUS);
+		} else if (chunk.getBlock(randomX, y - 1, randomZ).getType().equals(Material.SOUL_SAND)) {
+			if (random.nextInt(2) == 0) {
+				chunk.getBlock(randomX, y, randomZ).setType(Material.RED_MUSHROOM);
+			} else {
+				chunk.getBlock(randomX, y, randomZ).setType(Material.BROWN_MUSHROOM);
+			}
 		}
 	}
 

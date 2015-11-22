@@ -1,6 +1,6 @@
 main: com.eyeofmidas.skyblock.SkyblockGenerator
 name: SkyblockGenerator
-version: 0.1
+version: 0.2
 author: Justin Gilman
 website: http://eyeofmidas.com/skyblock
 description: SkyblockGenerator is a map generator that creates chunks inspired by Skyblock.

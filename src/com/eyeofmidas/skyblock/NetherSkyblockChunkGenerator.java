@@ -16,6 +16,7 @@ public class NetherSkyblockChunkGenerator extends ChunkGenerator {
 		this.blockPopulators = new ArrayList<BlockPopulator>();
 		this.blockPopulators.add(new NetherrackBlockPopulator());
 		this.blockPopulators.add(new GlowStoneBlockPopulator());
+		this.blockPopulators.add(new TreePopulator());
 	}
 
 	@Override

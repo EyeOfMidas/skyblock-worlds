@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="SkyboxWorld" default="makejar" basedir=".">
 	<target name="makejar" description="Create a jar for the project">
-		<property name="version" value="0.1"/>
+		<property name="version" value="0.2"/>
 		<mkdir dir="target">
 		</mkdir>
 		<jar destfile="target/${ant.project.name}_${version}.jar">
