@@ -9,9 +9,9 @@ public class ChestPacker {
 		ItemStack item = new ItemStack(material, amount);
 		chest.getBlockInventory().addItem(item);
 	}
-	
-	public static void addItem(Chest chest, Material material, int amount, int data) {
-		ItemStack item = new ItemStack(material, amount, (short)data);
+
+	public static void addItem(Chest chest, Material material, int amount, DamageValue data) {
+		ItemStack item = new ItemStack(material, amount, data.getId());
 		chest.getBlockInventory().addItem(item);
 	}
 }

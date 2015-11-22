@@ -24,12 +24,14 @@ public class NetherrackBlockPopulator extends BlockPopulator {
 					chunk.getBlock(x, 66, z).setType(Material.SOUL_SAND);
 				}
 			}
+			chunk.getBlock(8, 64, 8).setType(Material.BEDROCK);
+
 			Block chestBlock = chunk.getBlock(8, 67, 8);
 			chestBlock.setType(Material.CHEST);
 			BlockState possibleChest = chestBlock.getState();
 			if (possibleChest.getType().equals(Material.CHEST)) {
 				Chest chest = (Chest) possibleChest;
-				ChestPacker.addItem(chest, Material.SAPLING, 1, 2);
+				ChestPacker.addItem(chest, Material.SAPLING, 1, DamageValue.SPRUCE_SAPLING);
 				ChestPacker.addItem(chest, Material.SUGAR_CANE, 1);
 				ChestPacker.addItem(chest, Material.ICE, 1);
 			}
@@ -52,7 +54,7 @@ public class NetherrackBlockPopulator extends BlockPopulator {
 			BlockState possibleChest = chestBlock.getState();
 			if (possibleChest.getType().equals(Material.CHEST)) {
 				Chest chest = (Chest) possibleChest;
-				ChestPacker.addItem(chest, Material.SAPLING, 1, 2);
+				ChestPacker.addItem(chest, Material.SAPLING, 1, DamageValue.SPRUCE_SAPLING);
 				ChestPacker.addItem(chest, Material.SUGAR_CANE, 1);
 				ChestPacker.addItem(chest, Material.ICE, 1);
 			}

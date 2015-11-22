@@ -10,9 +10,15 @@ public class SkyblockGenerator extends JavaPlugin {
 
 	private Logger log = Logger.getLogger("Minecraft");
 	PluginDescriptionFile pluginDescriptionFile;
+	// private RespawnListener respawnListener;
 
 	@Override
 	public void onEnable() {
+
+		// respawnListener = new RespawnListener();
+		// joinListener = new JoinListener();
+		// worldChangeListener = new worldChangeListener();
+
 		pluginDescriptionFile = getDescription();
 		log.info("[SkyblockGenerator] " + pluginDescriptionFile.getFullName() + " enabled");
 	}
@@ -36,5 +42,4 @@ public class SkyblockGenerator extends JavaPlugin {
 
 		return super.getDefaultWorldGenerator(worldName, uid);
 	}
-
 }

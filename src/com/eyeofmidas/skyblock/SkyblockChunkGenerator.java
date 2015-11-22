@@ -17,7 +17,7 @@ public class SkyblockChunkGenerator extends ChunkGenerator {
 		this.blockPopulators = new ArrayList<BlockPopulator>();
 		this.blockPopulators.add(new DirtIslandBlockPopulator());
 		this.blockPopulators.add(new SandIslandBlockPopulator());
-		this.blockPopulators.add(new FloatingBedrockBlockPopulator());
+		// this.blockPopulators.add(new FloatingBedrockBlockPopulator());
 		this.blockPopulators.add(new TreePopulator());
 	}
 
@@ -33,11 +33,19 @@ public class SkyblockChunkGenerator extends ChunkGenerator {
 
 	@Override
 	public Location getFixedSpawnLocation(World world, Random random) {
-		return new Location(world, 8, 66, 8);
-	}
-	
-	@Override
-	public boolean canSpawn(World world, int x, int z) {
-		return super.canSpawn(world, x, z);
+		return new Location(world, 10, 66, 10);
+		// int posX = (random.nextInt(20) << 4) + 8;
+		// int posZ = (random.nextInt(20) << 4) + 8;
+		// int posY = world.getHighestBlockYAt(posX, posZ);
+		// Location spawn = new Location(world, posX, posY, posZ);
+		// while (posY == 0 && world.getBlockAt(posX, posY - 1, posZ).getType()
+		// != Material.GRASS) {
+		// posX = (random.nextInt(20) << 4) + 8;
+		// posZ = (random.nextInt(20) << 4) + 8;
+		// posY = world.getHighestBlockYAt(posX, posZ);
+		// spawn = new Location(world, posX, posY, posZ);
+		// }
+		//
+		// return spawn;
 	}
 }

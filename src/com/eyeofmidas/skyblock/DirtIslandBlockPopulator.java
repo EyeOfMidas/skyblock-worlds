@@ -9,7 +9,6 @@ import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Chest;
 import org.bukkit.generator.BlockPopulator;
-import org.bukkit.inventory.ItemStack;
 
 public class DirtIslandBlockPopulator extends BlockPopulator {
 
@@ -24,6 +23,8 @@ public class DirtIslandBlockPopulator extends BlockPopulator {
 					chunk.getBlock(x, 66, z).setType(Material.GRASS);
 				}
 			}
+			chunk.getBlock(8, 64, 8).setType(Material.BEDROCK);
+
 			Block chestBlock = chunk.getBlock(8, 67, 8);
 			chestBlock.setType(Material.CHEST);
 			BlockState possibleChest = chestBlock.getState();
@@ -31,12 +32,8 @@ public class DirtIslandBlockPopulator extends BlockPopulator {
 				Chest chest = (Chest) possibleChest;
 				ChestPacker.addItem(chest, Material.ICE, 1);
 				ChestPacker.addItem(chest, Material.LAVA_BUCKET, 1);
-				
-				ChestPacker.addItem(chest, Material.OBSIDIAN, 10);
-				ChestPacker.addItem(chest, Material.MELON, 1);
-				ChestPacker.addItem(chest, Material.PUMPKIN_SEEDS, 1);
-				
-				ChestPacker.addItem(chest, Material.SAPLING, 1, 2);
+
+				ChestPacker.addItem(chest, Material.SAPLING, 1, DamageValue.SPRUCE_SAPLING);
 				ChestPacker.addItem(chest, Material.SUGAR_CANE, 1);
 				ChestPacker.addItem(chest, Material.ICE, 1);
 			}
@@ -44,10 +41,11 @@ public class DirtIslandBlockPopulator extends BlockPopulator {
 		}
 
 		boolean canSpawn = random.nextFloat() < 0.1f;
-		int height = (int) (world.getMaxHeight() * random.nextFloat());
+		float quarterHeight = world.getMaxHeight() / 4;
+		int height = (int) ((quarterHeight * 2) * random.nextFloat() + quarterHeight);
 		if (canSpawn) {
-			for (int x = 6; x < 10; x++) {
-				for (int z = 6; z < 10; z++) {
+			for (int x = 6; x < 12; x++) {
+				for (int z = 6; z < 12; z++) {
 					for (int y = height; y < height + 2; y++) {
 						chunk.getBlock(x, y, z).setType(Material.DIRT);
 					}

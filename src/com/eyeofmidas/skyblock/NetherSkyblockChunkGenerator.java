@@ -32,9 +32,4 @@ public class NetherSkyblockChunkGenerator extends ChunkGenerator {
 	public Location getFixedSpawnLocation(World world, Random random) {
 		return new Location(world, 8, 66, 8);
 	}
-
-	@Override
-	public boolean canSpawn(World world, int x, int z) {
-		return super.canSpawn(world, x, z);
-	}
 }
